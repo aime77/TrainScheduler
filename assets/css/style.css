@@ -1,0 +1,10 @@
+body{
+    background-color: blanchedalmond;
+}
+
+#title{
+    background-image:url("../images/train_bg2.jpg");
+    color:white;
+    text-align: center;
+
+}
