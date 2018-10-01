@@ -11,6 +11,7 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href=".\assets\css\style.css" />
     <!-- Google -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <!-- jquery-->
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
@@ -20,13 +21,15 @@
 <body>
     <div class="container jumbotron">
         <div id="title" class=py-4>
-            <h1>Train Station Cho-Choo Is The Way To Ride</h1>
+            <h1>Train Station Choo-Choo Is The Way To Ride</h1>
         </div>
         <br>
-        <div class="card p-5">
+        <div class="card p-5 table-responsive mt-0">
+                <div class="card-header bg-primary text-white mt-0 mb-3">
+                  <b>Current Train Schedule</b></div>
             <table class="table">
                 <thead class="light">
-                    <tr>
+                    <tr class="table col-sm-12 col-md-10">
                         <th scope="col">Train Name</th>
                         <th scope="col">Destination</th>
                         <th scope="col">Frequency (min)</th>
@@ -34,15 +37,17 @@
                         <th scope="col">Minutes Away</th>
                     </tr>
                 </thead>
-                <tbody id="tableBody">
+                <tbody id="tableBody" class=class="table col-sm-12 col-md-10">
                 </tbody>
             </table>
         </div>
         <br>
 
         <div class="card p-5">
-            <form>
-                <div class="form-group">
+                <div class="card-header bg-primary text-white mt-0 mb-3">
+                       <b>Add Train</b></div>
+            <form class="form">
+                <div class="form-group form">
                     <label for="inputTrainName">Train Name</label>
                     <input type="text" class="form-control" id="inputTrainName" placeholder="Light Speed">
                 </div>
@@ -53,7 +58,7 @@
 
                 <div class="form-group">
                     <label for="inputTime">First Train Time (HH:mm - military time)</label>
-                    <input input:"text" class="form-control" id="inputTime" placeholder="12:00">
+                    <input type="text" data-format="hh:mm"class="form-control" id="inputTime" placeholder="12:00" min="00:00" max="23:59">
                 </div>
                 <div class="form-group">
                     <label for="frequency">Frequency (min)</label>
